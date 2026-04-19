@@ -49,10 +49,10 @@ const Header = () => {
       >
         <div className="container">
           <div className="relative -mx-4 flex items-center justify-between">
-            <div className="w-30 max-w-full px-4 xl:mr-12">
+            <div className="max-w-full px-4 xl:mr-12">
               <Link
                 href="/"
-                className={`header-logo block w-full ${
+                className={`header-logo flex items-center gap-2 ${
                   sticky ? "py-5 lg:py-2" : "py-8"
                 } `}
               >
@@ -61,15 +61,18 @@ const Header = () => {
                   alt="logo"
                   width={30}
                   height={30}
-                  className="w-full dark:hidden"
+                  className="dark:hidden"
                 />
                 <Image
                   src="/images/logo/logo.png"
                   alt="logo"
-                  width={130}
-                  height={130}
-                  className="hidden w-full dark:block"
+                  width={30}
+                  height={30}
+                  className="hidden dark:block"
                 />
+                <span className="text-xl font-bold text-dark dark:text-white">
+                  Storysizer
+                </span>
               </Link>
             </div>
             <div className="flex w-full items-center justify-between px-4">
@@ -161,7 +164,7 @@ const Header = () => {
               <div className="flex items-center justify-end pr-16 lg:pr-0">
                 <Link
                   href="https://app.storysizer.org"
-                  className="ease-in-up hidden rounded-sm bg-[#ffdd00] px-8 py-3 text-base font-medium text-[#090a3a] transition duration-300 hover:bg-[#f2cf00] md:block md:px-9 lg:px-6 xl:px-9"
+                  className="ease-in-up rounded-sm bg-[#ffdd00] px-4 py-2 text-sm font-medium text-[#090a3a] transition duration-300 hover:bg-[#f2cf00] md:px-9 md:py-3 md:text-base lg:px-6 xl:px-9"
                 >
                   Open Storysizer App
                 </Link>
