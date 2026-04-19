@@ -36,7 +36,7 @@ const Contact = () => {
       }
 
       setStatusType("success");
-      setStatusMessage("Ticket sent successfully. We will get back to you soon.");
+      setStatusMessage("Ticket sent successfully. We will get back to you.");
       event.currentTarget.reset();
     } catch (error) {
       setStatusType("error");
