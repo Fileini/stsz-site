@@ -164,9 +164,16 @@ const Header = () => {
               <div className="flex items-center justify-end pr-16 lg:pr-0">
                 <Link
                   href="https://app.storysizer.org"
-                  className="ease-in-up rounded-sm bg-[#ffdd00] px-4 py-2 text-sm font-medium text-[#090a3a] transition duration-300 hover:bg-[#f2cf00] md:px-9 md:py-3 md:text-base lg:px-6 xl:px-9"
+                  className="ease-in-up rounded-sm bg-[#ffdd00] px-3 py-1.5 text-xs font-medium text-[#090a3a] transition duration-300 hover:bg-[#f2cf00] md:px-9 md:py-3 md:text-base lg:px-6 xl:px-9"
                 >
-                  Open Storysizer App
+                  <span className="flex items-center gap-1">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="md:h-4 md:w-4">
+                      <line x1="7" y1="17" x2="17" y2="7" />
+                      <polyline points="7 7 17 7 17 17" />
+                    </svg>
+                    <span className="md:hidden">Open App</span>
+                    <span className="hidden md:inline">Open Storysizer App</span>
+                  </span>
                 </Link>
                 <div>
                   <ThemeToggler />
