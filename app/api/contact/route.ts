@@ -1,7 +1,6 @@
-import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 const SUPPORT_EMAIL = "francescomaria.falini@gmail.com";
 
@@ -27,28 +26,6 @@ export async function POST(request: Request) {
       );
     }
 
-    const smtpHost = process.env.SMTP_HOST;
-    const smtpPort = Number(process.env.SMTP_PORT || "587");
-    const smtpUser = process.env.SMTP_USER;
-    const smtpPass = process.env.SMTP_PASS;
-    const mailFrom = process.env.MAIL_FROM || smtpUser;
-
-    if (!smtpHost || !smtpUser || !smtpPass || !mailFrom) {
-      return NextResponse.json(
-        { error: "Email service is not configured on the server." },
-        { status: 500 },
-      );
-    }
-
-    const transporter = nodemailer.createTransport({
-      host: smtpHost,
-      port: smtpPort,
-      secure: smtpPort === 465,
-      auth: {
-        user: smtpUser,
-        pass: smtpPass,
-      },
-    });
 
     const subjectByType = {
       support: `StorySizer Support Ticket from ${name}`,
@@ -62,18 +39,37 @@ export async function POST(request: Request) {
       "custom-version": "Custom Version Request",
     };
 
-    await transporter.sendMail({
-      from: mailFrom,
-      to: SUPPORT_EMAIL,
-      replyTo: email,
-      subject: subjectByType[submissionType],
-      text: `Type: ${labelByType[submissionType]}\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-      html: `<p><strong>Name:</strong> ${escapeHtml(name)}</p><p><strong>Email:</strong> ${escapeHtml(
-        email,
-      )}</p><p><strong>Type:</strong> ${escapeHtml(
-        labelByType[submissionType],
-      )}</p><p><strong>Message:</strong></p><p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>`,
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      return NextResponse.json(
+        { error: "Resend API key not configured." },
+        { status: 500 },
+      );
+    }
+
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: `StorySizer <onboarding@resend.dev>`,
+        to: [SUPPORT_EMAIL],
+        reply_to: email,
+        subject: subjectByType[submissionType],
+        html: `<p><strong>Name:</strong> ${escapeHtml(name)}</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Type:</strong> ${escapeHtml(labelByType[submissionType])}</p><p><strong>Message:</strong></p><p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>`,
+        text: `Type: ${labelByType[submissionType]}\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      }),
     });
+
+    if (!res.ok) {
+      const error = await res.json().catch(() => ({}));
+      return NextResponse.json(
+        { error: error?.message || "Failed to send email via Resend." },
+        { status: 500 },
+      );
+    }
 
     return NextResponse.json({ ok: true });
   } catch (error) {
