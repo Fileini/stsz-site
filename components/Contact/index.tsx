@@ -29,7 +29,9 @@ const Contact = () => {
         body: JSON.stringify(payload),
       });
 
-      const result = await response.json();
+      const result = await response
+        .json()
+        .catch(() => ({ error: "Server returned an invalid response." }));
 
       if (!response.ok) {
         throw new Error(result.error || "Unable to submit your ticket.");
