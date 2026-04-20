@@ -11,8 +11,9 @@ const Contact = () => {
     event.preventDefault();
     setStatusMessage(null);
     setStatusType(null);
+    const form = event.currentTarget;
 
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     const payload = {
       name: String(formData.get("name") || ""),
       email: String(formData.get("email") || ""),
@@ -39,7 +40,7 @@ const Contact = () => {
 
       setStatusType("success");
       setStatusMessage("Ticket sent successfully. We will get back to you.");
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       setStatusType("error");
       setStatusMessage(

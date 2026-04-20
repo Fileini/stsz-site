@@ -25,8 +25,9 @@ const TextSubmissionForm = ({
     event.preventDefault();
     setStatusMessage(null);
     setStatusType(null);
+    const form = event.currentTarget;
 
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     const payload = {
       name: String(formData.get("name") || ""),
       email: String(formData.get("email") || ""),
@@ -53,7 +54,7 @@ const TextSubmissionForm = ({
 
       setStatusType("success");
       setStatusMessage("Your message has been sent successfully.");
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       setStatusType("error");
       setStatusMessage(
