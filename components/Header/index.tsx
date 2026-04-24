@@ -164,6 +164,8 @@ const Header = () => {
               <div className="flex items-center justify-end pr-16 lg:pr-0">
                 <Link
                   href="https://app.storysizer.org"
+                  rel="noopener"
+                  aria-label="Open Storysizer App"
                   className="ease-in-up rounded-sm bg-[#ffdd00] px-3 py-1.5 text-xs font-medium text-[#090a3a] transition duration-300 hover:bg-[#f2cf00] md:px-9 md:py-3 md:text-base lg:px-6 xl:px-9"
                 >
                   <span className="flex items-center gap-1">
