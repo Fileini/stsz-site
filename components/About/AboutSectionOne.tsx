@@ -55,7 +55,7 @@ const AboutSectionOne = () => {
                 data-wow-delay=".2s"
               >
                 <Image
-                  src="/images/mockups/loginscreen-mockup/IMG_3564-portrait.png"
+                  src="/images/mockups/loginscreen-mockup/Screenshot 2026-04-26 (22.20.09)-portrait.png"
                   alt="Storysizer login with Google, GitHub, and Microsoft"
                   fill
                   className="mx-auto max-w-full object-contain lg:mr-0"
