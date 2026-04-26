@@ -84,13 +84,13 @@ const Hero = () => {
                         />
                       </svg>
                     </span>
-                    Buy me a coffee
+                    Support StorySizer with a coffee
                   </Link>
                   <Link
                     href="https://github.com/Fileini/storysizer"
                     className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
                   >
-                    Star on GitHub
+                    Leave a Star on GitHub ⭐
                   </Link>
                   <Link
                     href="/custom-version"
