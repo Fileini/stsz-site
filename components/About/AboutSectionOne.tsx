@@ -24,8 +24,8 @@ const AboutSectionOne = () => {
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
-                title="Secure Login with Google SSO"
-                paragraph="Access Storysizer in seconds with Google Single Sign-On. Fast onboarding, secure authentication, and privacy-first access controls are built in by default."
+                title="Secure Login with Social SSO"
+                paragraph="Access Storysizer in seconds with social Single Sign-On. Fast onboarding, secure authentication, and privacy-first access controls are built in by default."
                 mb="44px"
               />
 
@@ -35,7 +35,7 @@ const AboutSectionOne = () => {
               >
                 <div className="mx-[-12px] flex flex-wrap">
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="One-click access with Google SSO" />
+                    <List text="One-click access with Google, GitHub, and Microsoft" />
                     <List text="Faster sign-in, no password setup" />
                     <List text="Encrypted and secure auth flow" />
                   </div>
@@ -43,7 +43,7 @@ const AboutSectionOne = () => {
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
                     <List text="Your data stays private by design" />
                     <List text="Minimal permissions, full transparency" />
-                    <List text="GitHub Login (Upcoming)" />
+                    <List text="Apple Login (Coming Soon)" />
                   </div>
                 </div>
               </div>
@@ -56,7 +56,7 @@ const AboutSectionOne = () => {
               >
                 <Image
                   src="/images/mockups/loginscreen-mockup/IMG_3564-portrait.png"
-                  alt="Storysizer login with Google SSO"
+                  alt="Storysizer login with Google, GitHub, and Microsoft"
                   fill
                   className="mx-auto max-w-full object-contain lg:mr-0"
                 />
