@@ -30,7 +30,7 @@ const PrivacyPolicyPage = () => {
         <div className="container">
           <div className="mx-auto max-w-[900px] rounded-sm border border-body-color/10 bg-white p-8 dark:border-white/10 dark:bg-dark sm:p-10">
             <p className="mb-6 text-base leading-relaxed text-body-color">
-              <strong>Effective date:</strong> 19 April 2026
+              <strong>Effective date:</strong> 27 April 2026
             </p>
 
             <h2 className="mb-3 text-xl font-bold text-black dark:text-white">1. Introduction</h2>
@@ -211,7 +211,51 @@ const PrivacyPolicyPage = () => {
               Policy.
             </p>
 
-            <h2 className="mb-3 text-xl font-bold text-black dark:text-white">17. Contact</h2>
+            <h2 id="cookies" className="mb-3 text-xl font-bold text-black dark:text-white">17. Cookies and Similar Technologies</h2>
+            <p className="mb-3 text-base leading-relaxed text-body-color">
+              This section also serves as our cookie policy for the storysizer.org website. The
+              authenticated application available at app.storysizer.org is covered by a separate
+              notice.
+            </p>
+            <p className="mb-3 text-base leading-relaxed text-body-color">
+              The storysizer.org marketing website does not use analytics, advertising, profiling,
+              or tracking cookies. We do not embed third-party tracking pixels, marketing tags, or
+              social plugins that set persistent identifiers on your device.
+            </p>
+            <p className="mb-3 text-base leading-relaxed text-body-color">
+              We rely only on technical storage that is strictly necessary to deliver the website
+              and respect your interface preferences:
+            </p>
+            <ul className="mb-3 list-disc space-y-2 pl-6 text-base leading-relaxed text-body-color">
+              <li>
+                <strong>Theme preference (browser localStorage):</strong> we store your light/dark
+                theme choice locally in your browser so the website remembers it on subsequent
+                visits. This information stays on your device and is not transmitted to us.
+              </li>
+              <li>
+                <strong>Security and anti-bot cookies set by our hosting provider
+                (Cloudflare):</strong> our infrastructure provider may set strictly necessary
+                cookies (such as <code>__cf_bm</code> and <code>cf_clearance</code>) to protect the
+                website against automated abuse and to ensure availability. These are technical
+                cookies used for security purposes.
+              </li>
+            </ul>
+            <p className="mb-3 text-base leading-relaxed text-body-color">
+              Under the EU ePrivacy framework and the Italian Data Protection Authority guidelines,
+              the technologies listed above qualify as strictly necessary or as user-preference
+              technical storage and therefore do not require prior consent. No cookie banner is
+              displayed because we do not deploy any non-essential tracking technology.
+            </p>
+            <p className="mb-6 text-base leading-relaxed text-body-color">
+              You can always block, delete, or restrict cookies and local storage through your
+              browser settings. Disabling them may affect your theme preference being remembered
+              and, in some cases, the protective measures applied by our hosting provider. If we
+              ever introduce analytics, marketing, or other non-essential technologies, we will
+              update this section and request your consent through an appropriate banner before
+              activating them.
+            </p>
+
+            <h2 className="mb-3 text-xl font-bold text-black dark:text-white">18. Contact</h2>
             <p className="text-base leading-relaxed text-body-color">
               Francesco Maria Falini
               <br />

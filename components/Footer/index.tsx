@@ -75,6 +75,14 @@ const Footer = () => {
                       Privacy Policy
                     </a>
                   </li>
+                  <li>
+                    <a
+                      href="/privacy-policy#cookies"
+                      className="dark:text-body-color-dark mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:hover:text-primary"
+                    >
+                      Cookie Policy
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
